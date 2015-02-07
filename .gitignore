@@ -1,0 +1,5 @@
+app/lib
+
+*.tmp
+*.swp
+.DS_Store

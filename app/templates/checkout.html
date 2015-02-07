@@ -1,0 +1,34 @@
+<table class="striped">
+    <thead>
+        <tr>
+            <th data-field="id">Name</th>
+            <th data-field="price">Price</th>
+            <th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% _.each(items, function (item) { %>
+            <tr>
+                <td><%- item.name %></td>
+                <td><%- item._price %></td>
+            </tr>
+        <% }) %>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td><strong>Total</strong></td>
+            <td><strong><%- total._price %></strong></td>
+        </tr>
+        <% if (total.discount > 0) { %>
+            <tr>
+                <td><strong>Discount</strong></td>
+                <td><strong>-<%- total._discount %></strong></td>
+            </tr>
+            <tr>
+                <td><strong>Total After Discount</strong></td>
+                <td><strong><%- total._discountedPrice %></strong></td>
+            </tr>
+        <% } %>
+    </tfoot>
+</table>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Cart App</title>
+
+    <link href="/lib/materialize/dist/css/materialize.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <nav>
+                    <div class="nav-wrapper">
+                        <div class="col s12">
+                            <a class="brand-logo">Cart App</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="col s8">
+                <div class="route-view"></div>
+            </div>
+
+            <div class="col s4">
+                <div class="cart-view"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- library dependencies -->
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/underscore/underscore-min.js"></script>
+    <script src="/lib/backbone/backbone.js"></script>
+    <script src="/lib/materialize/dist/js/materialize.min.js"></script>
+
+    <!-- app scripts -->
+    <script src="/js/namespace.js"></script>
+    <script src="/js/models/product.js"></script>
+    <script src="/js/collections/products.js"></script>
+    <script src="/js/collections/items.js"></script>
+    <script src="/js/views/products.js"></script>
+    <script src="/js/views/cart.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<h4>Products</h4>
+
+<nav>
+    <div class="nav-wrapper blue lighten-2">
+        <div class="col s12">
+            <ul class="left side-nav categories">
+                <li class="<%- filterCategory === null ? 'active' : null %>"><a href="#">All</a></li>
+                <% _.each(categories, function (category) { %>
+                    <li class="<%- filterCategory === category ? 'active' : null %>"><a href="#" data-category="<%- category %>"><%- category %></a></li>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="col s12">
+    <div class="col s6">
+            <select class="browser-default prices">
+                <% _.each(prices, function (price, index) { %>
+                    <option data-min="<%- price.min %>" data-max="<%- price.max %>" value="<%- index %>" <%- price.selected ? "selected" : null %>><%- price.text %></option>
+                <% }) %>
+            </select>
+    </div>
+
+    <div class="col s6">
+            <select class="browser-default sort">
+                <% _.each(sorting, function (sort) { %>
+                    <option value="<%- sort.order %>" <%- sort.selected ? "selected" : null %>><%- sort.text %></option>
+                <% }) %>
+            </select>
+    </div>
+</div>
+
+
+<div class="row">
+
+    <% _.each(products, function (product) { %>
+
+        <% if (filterCategory === null || product.category === filterCategory) { %>
+            <% if ((_.isEmpty(filterMin) || product.price >= Number(filterMin)) && (_.isEmpty(filterMax) || product.price <= Number(filterMax))) { %>
+                <div class="col s12 m6 l4 product" data-price="<%- product._price %>">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="<%- product.image %>">
+                            <span class="card-title"><%- product.name %></span>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-4"><%- product._price %></span>
+                            <p><a href="#" class="add-to-cart" data-id="<%- product.id %>">Add To Cart</a></p>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        <% } %>
+    <% }) %>
+
+</div>
