@@ -1,3 +1,3 @@
 # cart-test
 
-To download dependencies run ``bowers install``.
+To download dependencies run ``bower install``.
